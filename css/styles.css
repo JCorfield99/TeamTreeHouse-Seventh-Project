@@ -1,0 +1,195 @@
+/* ======================================== */
+/* ===== ELEMENT SELECTORS ================ */
+/* ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+header * {
+    display: inline-block;
+}
+
+h2,
+legend {
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+h2,
+form {
+    border-bottom: solid 1px #aaa;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    height: 100px;
+}
+
+::placeholder {
+    font-size: 1rem;
+    color: #888;
+}
+
+input,
+textarea,
+select,
+label {
+    margin: 0 15px 15px;
+}
+
+input,
+textarea,
+select {
+    padding: 15px;
+    border-radius: 5px;
+}
+
+input,
+textarea,
+select {
+    background-color: #ddd;
+    color: #888;
+    border: solid 2px #aaa;
+}
+
+/* ======================================== */
+/* ===== CLASS SELECTORS ================== */
+/* ======================================== */
+
+.flex-container,
+.top-tab {
+    display: flex;
+    align-items: center;
+}
+
+.flex-container {
+    justify-content: space-between;
+}
+
+.logo {
+    margin-right: auto;
+    font-size: 1.25rem;
+    font-weight: normal;
+}
+
+.logo strong {
+    font-weight: bold;
+}
+
+.img-container {
+    width: 45px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-left: solid 1px #aaa;
+}
+
+.profile-img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.top-tab span {
+    display: inline-block;
+    width: 100%;
+    height: 52px;
+    background-color: #ddd;
+    border-left: solid 1px #aaa;
+    border-bottom: solid 1px #aaa;
+}
+
+.alert {
+    display: flex;
+    margin: 15px;
+    padding: 10px 15px;
+    justify-content: space-between;
+    background-color: #8f87ff;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.alert button {
+    background-color: #8f87ff;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.send-btn,
+.save-btn,
+.cancel-btn {
+    margin: 0 15px 15px;
+    padding: 15px;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.send-btn,
+.save-btn {
+    background-color: #8f87ff;
+}
+
+.save-btn,
+.cancel-btn {
+    width: 50%;
+}
+
+.cancel-btn {
+    background-color: #888;
+}
+
+.setting,
+.settings-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* ======================================== */
+/* ===== ID SELECTORS ===================== */
+/* ======================================== */
+
+#main-header {
+    padding: 10px;
+    background-color: #8f87ff;
+    color: #fff;
+}
+
+#main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #36315e;
+}
+
+#main-nav a {
+    text-decoration: none;
+    fill: #fff;
+}
+
+/* ======================================== */
+/* ===== SVG STYLES ======================= */
+/* ======================================== */
+
+.notification-bell {
+    width: 25px;
+    margin-right: 10px;
+    fill: #fff;
+}
+
+.nav-svg {
+    width: 35px;
+    height: 35px;
+    padding: 10px 4vw;
+}
