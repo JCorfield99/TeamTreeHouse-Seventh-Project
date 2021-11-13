@@ -189,6 +189,49 @@ select {
     color: #888;
 }
 
+.member,
+.activity {
+    display: flex;
+    flex-direction: column;
+    margin: 0 15px;
+    padding-bottom: 15px;
+    align-items: center;
+    text-align: center;
+}
+
+.member:not(:first-of-type),
+.activity:not(:first-of-type) {
+    padding-top: 15px;
+    border-top: solid 1px #aaa;
+}
+
+.member img,
+.activity img {
+    width: 70px;
+    border-radius: 50%;
+}
+
+.member p,
+.activity p {
+    margin: 0 10px;
+}
+
+.member a:link {
+    color: #8f87ff;
+}
+
+.member a:hover {
+    color: #66b564;
+}
+
+.member a:visited {
+    color: #36315e;
+}
+
+.activity strong {
+    font-weight: 600;
+}
+
 .send-btn,
 .save-btn,
 .cancel-btn {
