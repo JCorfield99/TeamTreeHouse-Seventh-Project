@@ -4,6 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>WebApp</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/styles.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js" integrity="sha512-GMGzUEevhWh8Tc/njS0bDpwgxdCJLQBWG3Z2Ct+JGOpVnEmjvNx6ts4v6A2XJf1HOrtOsfhv3hBKpK9kE5z8AQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </head>
@@ -54,28 +57,46 @@
                 <button type="button">x</button>
             </div>
             <section id="visits">
-                <div class="traffic">
+                <div class="traffic container">
                     <h2>Traffic</h2>
+                    <form class="traffic-select">
+                        <div class="traffic-container">
+                            <input type="radio" id="hourly" name="traffic" value="hourly">
+                            <label for="hourly">Hourly</label>
+                        </div>
+                        <div class="traffic-container">
+                            <input type="radio" id="daily" name="traffic" value="daily">
+                            <label for="daily">Daily</label>
+                        </div>
+                        <div class="traffic-container">
+                            <input type="radio" id="weekly" name="traffic" value="weekly">
+                            <label for="weekly">Weekly</label>
+                        </div>
+                        <div class="traffic-container">
+                            <input type="radio" id="monthly" name="traffic" value="monthly">
+                            <label for="monthly">Monthly</label>
+                        </div>
+                    </form>
                 </div>
-                <div class="daily-traffic">
+                <div class="daily-traffic container">
                     <h2>Daily Traffic</h2>
                 </div>
-                <div class="mobile-users">
+                <div class="mobile-users container">
                     <h2>Mobile Users</h2>
                 </div>
-                <div class="social-stats">
+                <div class="social-stats container">
                     <h2>Social Stats</h2>
                 </div>
             </section>
 
             <section id="members">
-                <div class="new-members">
+                <div class="new-members container">
                     <h2>New Members</h2>
                 </div>
-                <div class="recent-activity">
+                <div class="recent-activity container">
                     <h2>Recent Activity</h2>
                 </div>
-                <form class="message-user">
+                <form class="message-user container">
                     <legend>Message User</legend>
                     <input type="text" id="search-user" name="search_user" placeholder="Search for User">
                     <textarea id="message-user" name="message_user" placeholder="Message for User"></textarea>
@@ -84,7 +105,7 @@
             </section>
 
             <section id="settings">
-                <form>
+                <form class="container">
                     <legend>Settings</legend>
                     <div class="setting">
                         <label for="email-notification">Send Email Notifications</label>

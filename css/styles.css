@@ -6,6 +6,8 @@
     margin: 0;
     padding: 0;
     font-size: 1em;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
     text-decoration: none;
 }
 
@@ -16,18 +18,18 @@ header * {
 h2,
 legend {
     padding: 15px;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-h2,
-form {
-    border-bottom: solid 1px #aaa;
+    font-size: .9rem;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 form {
     display: flex;
     flex-direction: column;
+}
+
+p {
+    font-size: .8rem;
 }
 
 textarea {
@@ -66,7 +68,9 @@ select {
 /* ======================================== */
 
 .flex-container,
-.top-tab {
+.top-tab,
+.traffic-select,
+.traffic-container {
     display: flex;
     align-items: center;
 }
@@ -75,9 +79,13 @@ select {
     justify-content: space-between;
 }
 
+.container {
+    border-bottom: solid 1px #aaa;
+}
+
 .logo {
     margin-right: auto;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: normal;
 }
 
@@ -106,6 +114,12 @@ select {
     border-bottom: solid 1px #aaa;
 }
 
+.page-heading {
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    border-bottom: none;
+}
+
 .alert {
     display: flex;
     margin: 15px;
@@ -122,6 +136,33 @@ select {
     border: none;
     outline: none;
     cursor: pointer;
+}
+
+.traffic-select {
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.traffic-container {
+    flex-direction: row;
+}
+
+.traffic-container label {
+    display: inline-block;
+    margin: 0 0 15px;
+    padding: 10px;
+    font-size: .9rem;
+    border-radius: 29px;
+    transition: background-color .5s, color .5s;
+}
+
+.traffic-container input[type="radio"] {
+    display: none;
+}
+
+.traffic-container input[type="radio"]:checked + label {
+    background-color: #66b564;
+    color: #fff;
 }
 
 .send-btn,
