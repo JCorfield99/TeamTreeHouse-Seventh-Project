@@ -32,6 +32,10 @@ p {
     font-size: .8rem;
 }
 
+canvas {
+    padding: 15px;
+}
+
 textarea {
     height: 100px;
 }
@@ -291,6 +295,10 @@ select {
     fill: #fff;
 }
 
+#mobile-chart {
+    height: 160px;
+}
+
 /* ======================================== */
 /* ===== SVG STYLES ======================= */
 /* ======================================== */
@@ -341,8 +349,11 @@ select {
     }
 
     .traffic {
-        display: flex;
         grid-area: traffic;
+    }
+
+    .traffic div:first-of-type {
+        display: flex;
         flex-direction: row;
     }
 
@@ -401,6 +412,10 @@ select {
             "daily-traffic mobile-users"
             "social-stats social-stats";
     }
+
+    #mobile-chart {
+        height: 200px;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -420,6 +435,10 @@ select {
     .message-user,
     .new-members {
         border-right: solid 1px #aaa;
+    }
+
+    #mobile-chart {
+        height: 240px;
     }
 
     #members {

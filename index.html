@@ -9,6 +9,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/styles.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js" integrity="sha512-GMGzUEevhWh8Tc/njS0bDpwgxdCJLQBWG3Z2Ct+JGOpVnEmjvNx6ts4v6A2XJf1HOrtOsfhv3hBKpK9kE5z8AQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="js/random-data.js"></script>
     </head>
 
     <body>
@@ -59,31 +60,45 @@
                 </div>
                 <section id="visits">
                     <div class="traffic container">
-                        <h2>Traffic</h2>
-                        <form class="traffic-select">
-                            <div class="traffic-container">
-                                <input type="radio" id="hourly" name="traffic" value="hourly" checked>
-                                <label for="hourly">Hourly</label>
-                            </div>
-                            <div class="traffic-container">
-                                <input type="radio" id="daily" name="traffic" value="daily">
-                                <label for="daily">Daily</label>
-                            </div>
-                            <div class="traffic-container">
-                                <input type="radio" id="weekly" name="traffic" value="weekly">
-                                <label for="weekly">Weekly</label>
-                            </div>
-                            <div class="traffic-container">
-                                <input type="radio" id="monthly" name="traffic" value="monthly">
-                                <label for="monthly">Monthly</label>
-                            </div>
-                        </form>
+                        <div>
+                            <h2>Traffic</h2>
+                            <form class="traffic-select">
+                                <div class="traffic-container">
+                                    <input type="radio" id="hourly" name="traffic" value="hourly" checked>
+                                    <label for="hourly">Hourly</label>
+                                </div>
+                                <div class="traffic-container">
+                                    <input type="radio" id="daily" name="traffic" value="daily">
+                                    <label for="daily">Daily</label>
+                                </div>
+                                <div class="traffic-container">
+                                    <input type="radio" id="weekly" name="traffic" value="weekly">
+                                    <label for="weekly">Weekly</label>
+                                </div>
+                                <div class="traffic-container">
+                                    <input type="radio" id="monthly" name="traffic" value="monthly">
+                                    <label for="monthly">Monthly</label>
+                                </div>
+                            </form>
+                        </div>
+                        <div>
+                            <canvas id="traffic-chart"></canvas>
+                            <script src="js/traffic-chart.js"></script>
+                        </div>
                     </div>
                     <div class="daily-traffic container">
                         <h2>Daily Traffic</h2>
+                        <div>
+                            <canvas id="daily-chart"></canvas>
+                            <script src="js/daily-chart.js"></script>
+                        </div>
                     </div>
                     <div class="mobile-users container">
                         <h2>Mobile Users</h2>
+                        <div>
+                            <canvas id="mobile-chart"></canvas>
+                            <script src="js/mobile-chart.js"></script>
+                        </div>
                     </div>
                     <div class="social-stats container">
                         <h2>Social Stats</h2>
