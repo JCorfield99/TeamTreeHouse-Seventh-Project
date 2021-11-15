@@ -67,6 +67,10 @@ select {
 /* ===== CLASS SELECTORS ================== */
 /* ======================================== */
 
+.grid-container {
+    display: grid;
+}
+
 .flex-container,
 .top-tab,
 .traffic-select,
@@ -139,6 +143,7 @@ select {
 }
 
 .traffic-select {
+    display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
@@ -149,8 +154,8 @@ select {
 
 .traffic-container label {
     display: inline-block;
-    margin: 0 0 15px;
-    padding: 10px;
+    margin: 0;
+    padding: 5px 10px;
     font-size: .9rem;
     border-radius: 29px;
     transition: background-color .5s, color .5s;
@@ -169,14 +174,14 @@ select {
     display: flex;
     align-items: center;
     margin: 0 15px 15px;
-    padding: 15px;
+    padding: 10px;
     background-color: #ddd;
     border: solid 1px #aaa;
     border-radius: 5px;
 }
 
 .stat {
-    margin-left: 15px;
+    margin-left: 10px;
 }
 
 .stat h3 {
@@ -299,8 +304,8 @@ select {
 .nav-svg,
 .social-svg,
 .social-bg {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
 }
 
 .nav-svg {
@@ -316,3 +321,89 @@ select {
     background-color: #8f87ff;
     border-radius: 50%;
 }
+
+/* ======================================== */
+/* ===== MEDIA QUERIES ==================== */
+/* ======================================== */
+
+@media screen and (min-width: 768px) {
+
+    p {
+        font-size: .9rem;
+    }
+
+    .primary-grid-container {
+        display: grid;
+        grid-template-columns: 60px 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            "nav dashboard";
+    }
+
+    .traffic {
+        display: flex;
+        grid-area: traffic;
+        flex-direction: row;
+    }
+
+    .traffic h2 {
+        margin-right: auto;
+    }
+
+    .daily-traffic {
+        grid-area: daily-traffic;
+    }
+
+    .mobile-users {
+        grid-area: mobile-users;
+    }
+
+    .social-stats {
+        grid-area: social-stats;
+    }
+
+    .social-stats-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .social:not(:first-of-type) {
+        margin-left: 0;
+    }
+
+    .member,
+    .activity {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .member .date {
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    #main-nav {
+        flex-direction: column;
+        justify-content: flex-start;
+        grid-area: nav;
+    }
+
+    #dashboard {
+        grid-area: dashboard;
+    }
+
+    #visits {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "traffic traffic"
+            "daily-traffic mobile-users"
+            "social-stats social-stats";
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+}
+
+
