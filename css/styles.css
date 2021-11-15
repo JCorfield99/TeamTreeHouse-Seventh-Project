@@ -83,7 +83,7 @@ select {
     justify-content: space-between;
 }
 
-.container {
+.container:not(#settings .container) {
     border-bottom: solid 1px #aaa;
 }
 
@@ -352,6 +352,7 @@ select {
 
     .daily-traffic {
         grid-area: daily-traffic;
+        border-right: solid 1px #aaa;
     }
 
     .mobile-users {
@@ -404,6 +405,36 @@ select {
 
 @media screen and (min-width: 1024px) {
 
+    .secondary-grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "members members"
+            "message settings";
+    }
+
+    .message-user {
+        grid-area: message;
+    }
+
+    .message-user,
+    .new-members {
+        border-right: solid 1px #aaa;
+    }
+
+    #members {
+        display: grid;
+        grid-area: members;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #settings {
+        grid-area: settings;
+    }
+
+    #timezone {
+        margin-top: auto;
+    }
 }
 
 
