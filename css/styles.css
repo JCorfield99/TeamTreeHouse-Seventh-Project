@@ -130,7 +130,7 @@ select {
 
 .alert {
     display: flex;
-    margin: 15px;
+    margin: 15px 15px 0;
     padding: 10px 15px;
     justify-content: space-between;
     background-color: #8f87ff;
@@ -144,6 +144,10 @@ select {
     border: none;
     outline: none;
     cursor: pointer;
+}
+
+.traffic {
+    margin-top: 15px;
 }
 
 .traffic-select {
@@ -300,13 +304,37 @@ select {
 }
 
 /* ======================================== */
+/* ===== KEYFRAMES ======================== */
+/* ======================================== */
+
+@keyframes sway {
+    0% {
+        transform: rotate(0);
+    }
+    25% {
+        transform: rotate(-50deg);
+    }
+    75% {
+        transform: rotate(50deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+/* ======================================== */
 /* ===== SVG STYLES ======================= */
 /* ======================================== */
 
 .notification-bell {
     width: 25px;
     margin-right: 10px;
+    transform-origin: 50% 20%;
     fill: #fff;
+}
+
+.notification-bell:hover {
+    animation: sway .5s linear backwards;
 }
 
 .nav-svg,
