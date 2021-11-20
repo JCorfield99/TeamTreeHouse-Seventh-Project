@@ -2,11 +2,25 @@ const alertBox = document.querySelector('.alert');
 const alertButton = alertBox.lastElementChild;
 const messageButton = document.querySelector('.send-btn');
 
+const emailNotificationBtn = document.getElementById('email-notification');
+const publicProfileBtn = document.getElementById('public-profile');
+const timezoneSelect = document.getElementById('timezone');
+const settingBtn = document.querySelector('.settings-btn');
+const saveBtn = settingBtn.firstElementChild;
+const cancelBtn = settingBtn.lastElementChild;
+
+const defaultSettings = {
+    emailNotification: false,
+    publicProfile: false,
+    timezone: 'GMT',
+};
+
 // Closes the alert box
 function alertClose() {
     alertBox.style.display = 'none';
 }
 
+// Sends given message to the selected user
 function sendMessage(user, message) {
     let messageSuccess = false;
     if (user === '') {
@@ -19,6 +33,14 @@ function sendMessage(user, message) {
     }
     return messageSuccess;
 }
+
+// If there are settings options in local storage it selects those settings, else it selects default settings
+function updateSettings() {
+    emailNotificationBtn.checked = defaultSettings.emailNotification;
+    publicProfileBtn.checked = defaultSettings.publicProfile;
+    timezoneSelect.value = defaultSettings.timezone;
+}
+updateSettings();
 
 alertButton.addEventListener('click', () => {
     alertClose();
