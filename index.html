@@ -225,9 +225,11 @@
                             </div>
                         </div>
                     </section>
-                    <form class="message-user container">
+                    <form autocomplete="off" class="message-user container">
                         <legend>Message User</legend>
-                        <input type="text" id="search-user" name="search_user" placeholder="Search for User">
+                        <div class="autocomplete">
+                            <input type="text" id="search-user" name="search_user" placeholder="Search for User">
+                        </div>
                         <textarea id="message-user" name="message_user" placeholder="Message for User"></textarea>
                         <button class="send-btn" type="button">SEND</button>
                     </form>
@@ -267,5 +269,6 @@
             </main>
         </div>
         <script src="js/user-interaction.js"></script>
+        <script src="js/autocomplete.js"></script>
     </body>
 </html>
