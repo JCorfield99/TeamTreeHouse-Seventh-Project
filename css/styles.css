@@ -505,6 +505,17 @@ input:checked + .slider:before {
     animation: sway .5s linear backwards;
 }
 
+.dropdown::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    top: 5px;
+    right: 10px;
+    background-color: #66b564;
+    border-radius: 50%;
+}
+
 .nav-svg,
 .social-svg,
 .social-bg {
