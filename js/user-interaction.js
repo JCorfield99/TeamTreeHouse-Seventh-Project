@@ -2,6 +2,10 @@ const alertBell = document.querySelector('.notification-bell');
 const dropdown = document.getElementById('dropdown-menu');
 const alertBox = document.querySelector('.alert');
 const alertButton = alertBox.lastElementChild;
+
+const chartSelectRadio = document.querySelectorAll('input[name=traffic]');
+let prevRadio = null;
+
 const messageButton = document.querySelector('.send-btn');
 
 const emailNotificationBtn = document.getElementById('email-notification');
@@ -25,6 +29,13 @@ function dropdownToggle() {
 // Closes the alert box
 function alertClose() {
     alertBox.style.display = 'none';
+}
+
+// Updates traffic chart data
+function updateData(chart, dataType, labelType) {
+    chart.data.labels = labelType;
+    chart.data.datasets[0].data = dataType;
+    chart.update();
 }
 
 // Sends given message to the selected user
@@ -64,6 +75,21 @@ window.addEventListener('click', (event) => {
 alertButton.addEventListener('click', () => {
     alertClose();
 });
+
+for (let i = 0; i < chartSelectRadio.length; i++) {
+    const radio = chartSelectRadio[i];
+    radio.addEventListener('change', () => {
+        if (radio.value === 'hourly') {
+            updateData(trafficChart, hourlyTrafficData, hourlyTrafficLabels);
+        } else if (radio.value === 'daily') {
+            updateData(trafficChart, dailyTrafficData, dailyTrafficLabels);
+        } else if (radio.value === 'weekly') {
+            updateData(trafficChart, weeklyTrafficData, weeklyTrafficLabels);
+        } else if (radio.value === 'monthly') {
+            updateData(trafficChart, monthlyTrafficData, monthlyTrafficLabels);
+        }
+    });
+}
 
 messageButton.addEventListener('click', () => {
     let user = document.getElementById('search-user');
