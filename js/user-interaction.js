@@ -21,6 +21,12 @@ const defaultSettings = {
     timezone: 'GMT',
 };
 
+let userSettings = {
+    emailNotification: stringToBool(localStorage.getItem('emailNotification')),
+    publicProfile: stringToBool(localStorage.getItem('publicProfile')),
+    timezone: localStorage.getItem('timezone'),
+};
+
 // Toggles dropdown menu
 function dropdownToggle() {
     dropdown.classList.toggle('show');
@@ -52,13 +58,43 @@ function sendMessage(user, message) {
     return messageSuccess;
 }
 
-// If there are settings options in local storage it selects those settings, else it selects default settings
-function updateSettings() {
-    emailNotificationBtn.checked = defaultSettings.emailNotification;
-    publicProfileBtn.checked = defaultSettings.publicProfile;
-    timezoneSelect.value = defaultSettings.timezone;
+// Converts a true/false string into a boolean value
+function stringToBool(string) {
+    return (string === 'true');
 }
-updateSettings();
+
+// Updates current page settings
+function updateSettings(settings) {
+    localStorage.setItem('emailNotification', settings.emailNotification);
+    emailNotificationBtn.checked = stringToBool(localStorage.getItem('emailNotification'));
+    userSettings.emailNotification = emailNotificationBtn.checked;
+
+    localStorage.setItem('publicProfile', settings.publicProfile);
+    publicProfileBtn.checked = stringToBool(localStorage.getItem('publicProfile'));
+    userSettings.publicProfile = publicProfileBtn.checked;
+
+    localStorage.setItem('timezone', settings.timezone);
+    timezoneSelect.value = localStorage.getItem('timezone');
+    userSettings.timezone = timezoneSelect.value;
+}
+
+// If there are settings options in local storage it selects those settings, else it selects default settings
+function downloadSettings() {
+    let settings = {
+        emailNotification: null,
+        publicProfile: null,
+        timezone: null,
+    };
+    for (const key in userSettings) {
+        if (!userSettings[key]) {
+            settings[key] = defaultSettings[key];
+        } else {
+            settings[key] = userSettings[key];
+        }
+    }
+    updateSettings(settings);
+}
+downloadSettings();
 
 alertBell.addEventListener('click', () => {
     dropdownToggle();
@@ -99,4 +135,21 @@ messageButton.addEventListener('click', () => {
         user.value = '';
         message.value = '';
     }
+});
+
+saveBtn.addEventListener('click', () => {
+    const newSettings = {
+        emailNotification: emailNotificationBtn.checked,
+        publicProfile: publicProfileBtn.checked,
+        timezone: timezoneSelect.value,
+    };
+    updateSettings(newSettings);
+    alert('Settings updated.');
+});
+
+cancelBtn.addEventListener('click', () => {
+    emailNotificationBtn.checked = userSettings.emailNotification;
+    publicProfileBtn.checked = userSettings.publicProfile;
+    timezoneSelect.value = userSettings.timezone;
+    alert('Changes cancelled');
 });
